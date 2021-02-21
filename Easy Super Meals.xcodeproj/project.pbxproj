@@ -56,15 +56,71 @@
 		CEC7798B25E24AFD00FF3308 /* Easy Super Meals */ = {
 			isa = PBXGroup;
 			children = (
-				CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */,
-				CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */,
-				CEC7799025E24AFD00FF3308 /* ViewController.swift */,
-				CEC7799225E24AFD00FF3308 /* Main.storyboard */,
-				CEC7799525E24AFF00FF3308 /* Assets.xcassets */,
-				CEC7799725E24AFF00FF3308 /* LaunchScreen.storyboard */,
+				CEC779A725E24CF500FF3308 /* Model */,
+				CEC779A225E24C3B00FF3308 /* Views */,
+				CEC779A525E24C8C00FF3308 /* Controller */,
+				CEC779A125E24C2B00FF3308 /* Assets */,
+				CEC779A325E24C5D00FF3308 /* AppDelegates */,
 				CEC7799A25E24AFF00FF3308 /* Info.plist */,
 			);
 			path = "Easy Super Meals";
+			sourceTree = "<group>";
+		};
+		CEC779A125E24C2B00FF3308 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CEC7799525E24AFF00FF3308 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		CEC779A225E24C3B00FF3308 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEC7799225E24AFD00FF3308 /* Main.storyboard */,
+				CEC7799725E24AFF00FF3308 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEC779A325E24C5D00FF3308 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */,
+				CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		CEC779A525E24C8C00FF3308 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEC7799025E24AFD00FF3308 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CEC779A725E24CF500FF3308 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEC779A825E24D0300FF3308 /* CoreData */,
+				CEC779A925E24D1800FF3308 /* Networking */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEC779A825E24D0300FF3308 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CEC779A925E24D1800FF3308 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

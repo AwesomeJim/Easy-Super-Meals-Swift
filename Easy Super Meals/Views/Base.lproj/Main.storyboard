@@ -131,6 +131,9 @@
                                             <segment title="Instructions"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="selecedSegmentValueChanged:" destination="yN4-Na-fw5" eventType="valueChanged" id="Iy5-Bt-9Gb"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -140,12 +143,17 @@
                                     <constraint firstItem="OGh-aI-6IH" firstAttribute="top" secondItem="Xxs-LR-59a" secondAttribute="top" id="xaW-Gq-PvB"/>
                                 </constraints>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gez-sh-xgI" userLabel="InstructionsLabel">
-                                <rect key="frame" x="0.0" y="417" width="414" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKZ-oT-4YA">
+                                <rect key="frame" x="0.0" y="417" width="414" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="xVW-qv-Jrg"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P30-XH-8HD">
                                 <rect key="frame" x="0.0" y="417" width="414" height="396"/>
                                 <subviews>
@@ -193,14 +201,14 @@
                         <constraints>
                             <constraint firstItem="kf8-1s-ohP" firstAttribute="trailing" secondItem="Xxs-LR-59a" secondAttribute="trailing" id="1lE-Nb-U4d"/>
                             <constraint firstItem="P30-XH-8HD" firstAttribute="leading" secondItem="kf8-1s-ohP" secondAttribute="leading" id="24R-X4-CNr"/>
-                            <constraint firstItem="gez-sh-xgI" firstAttribute="top" secondItem="Xxs-LR-59a" secondAttribute="bottom" id="6rb-ph-ozM"/>
                             <constraint firstItem="EDD-uB-tTW" firstAttribute="leading" secondItem="kf8-1s-ohP" secondAttribute="leading" id="89s-7o-9O9"/>
                             <constraint firstItem="OhM-lW-ltM" firstAttribute="leading" secondItem="kf8-1s-ohP" secondAttribute="leading" id="9wf-NT-tEq"/>
-                            <constraint firstItem="gez-sh-xgI" firstAttribute="leading" secondItem="kf8-1s-ohP" secondAttribute="leading" id="B1T-Ed-QKS"/>
                             <constraint firstItem="OhM-lW-ltM" firstAttribute="trailing" secondItem="kf8-1s-ohP" secondAttribute="trailing" id="CfU-Bb-cEQ"/>
-                            <constraint firstItem="gez-sh-xgI" firstAttribute="trailing" secondItem="kf8-1s-ohP" secondAttribute="trailing" id="GQh-is-5UT"/>
                             <constraint firstItem="P30-XH-8HD" firstAttribute="top" secondItem="Xxs-LR-59a" secondAttribute="bottom" id="GqI-bg-4zI"/>
+                            <constraint firstAttribute="trailing" secondItem="xKZ-oT-4YA" secondAttribute="trailing" id="LcJ-ES-qc7"/>
                             <constraint firstItem="kf8-1s-ohP" firstAttribute="trailing" secondItem="P30-XH-8HD" secondAttribute="trailing" id="Pej-yf-8Zs"/>
+                            <constraint firstItem="xKZ-oT-4YA" firstAttribute="leading" secondItem="MHi-kS-cEJ" secondAttribute="leading" id="PyC-vB-k1E"/>
+                            <constraint firstItem="xKZ-oT-4YA" firstAttribute="top" secondItem="Xxs-LR-59a" secondAttribute="bottom" id="QLD-Tz-5lg"/>
                             <constraint firstItem="EDD-uB-tTW" firstAttribute="trailing" secondItem="kf8-1s-ohP" secondAttribute="trailing" id="Td2-pm-Tng"/>
                             <constraint firstItem="Xxs-LR-59a" firstAttribute="leading" secondItem="kf8-1s-ohP" secondAttribute="leading" id="bHy-Sf-BIs"/>
                             <constraint firstItem="OhM-lW-ltM" firstAttribute="top" secondItem="kf8-1s-ohP" secondAttribute="top" id="hpc-0C-H42"/>
@@ -212,7 +220,7 @@
                     <navigationItem key="navigationItem" id="vlN-KU-QSh"/>
                     <connections>
                         <outlet property="IngredientsView" destination="P30-XH-8HD" id="V1z-YJ-0Dm"/>
-                        <outlet property="InstructionsLabel" destination="gez-sh-xgI" id="hoi-t1-hz8"/>
+                        <outlet property="InstructionsTextView" destination="xKZ-oT-4YA" id="Bq7-rH-zbC"/>
                         <outlet property="bannerImageView" destination="OhM-lW-ltM" id="icn-LI-Hqt"/>
                         <outlet property="favouriteImageView" destination="Q6Y-QZ-QON" id="Yzg-Lm-TjV"/>
                         <outlet property="selectedSegment" destination="a9P-j2-QsG" id="iyu-41-VOR"/>
@@ -332,6 +340,9 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="w.circle" catalog="system" width="128" height="121"/>
         <image name="y.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

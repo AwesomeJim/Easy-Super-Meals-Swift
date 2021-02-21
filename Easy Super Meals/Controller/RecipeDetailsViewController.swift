@@ -15,9 +15,9 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var youTubeImageView: UIImageView!
     @IBOutlet weak var favouriteImageView: UIImageView!
     @IBOutlet weak var selectedSegment: UISegmentedControl!
-    @IBOutlet weak var InstructionsLabel: UILabel!
     @IBOutlet weak var IngredientsView: UIStackView!
     
+    @IBOutlet weak var InstructionsTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
     var shortRecipe:ShortRecipe?
@@ -59,23 +59,24 @@ class RecipeDetailsViewController: UIViewController {
     func populateRecipe(recipe:RestRecipe)  {
         titleLabel.text = recipe.name
         ingredients = recipe.ingredients
-        InstructionsLabel.text = recipe.instructions
+        InstructionsTextView.text = recipe.instructions
         tableView.reloadData()
         loadList(selectedSegmentIndex: selectedSegment.selectedSegmentIndex)
     }
     
     func loadList(selectedSegmentIndex:Int) {
         if selectedSegmentIndex == 0{
-            tableView.isHidden = false
             IngredientsView.isHidden = false
-            InstructionsLabel.isHidden = true
+            InstructionsTextView.isHidden = true
         }else if selectedSegmentIndex == 1 {
-            tableView.isHidden = true
-            InstructionsLabel.isHidden = false
+            InstructionsTextView.isHidden = false
             IngredientsView.isHidden = true
         }
     }
     
+    @IBAction func selecedSegmentValueChanged(_ sender: UISegmentedControl) {
+        loadList(selectedSegmentIndex: sender.selectedSegmentIndex)
+    }
 }
 
 

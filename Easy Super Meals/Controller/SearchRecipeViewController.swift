@@ -64,15 +64,19 @@ class SearchRecipeViewController: UIViewController {
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "recipeSegue" {
+            let detailVC = segue.destination as! RecipeDetailsViewController
+            detailVC.shortRecipe = sender as? ShortRecipe
+        }
+    }
+    
     
     func loadRecipeList(selectedSegmentIndex:Int, queryString:String) {
         activityIndicator.startAnimating()
@@ -97,6 +101,8 @@ class SearchRecipeViewController: UIViewController {
             }
         })
     }
+    
+    
     
 }
 
@@ -155,8 +161,8 @@ extension SearchRecipeViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shortRecipe = self.recipeList[(indexPath as NSIndexPath).row]
-        
-        
+        performSegue(withIdentifier: "recipeSegue", sender: shortRecipe)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     

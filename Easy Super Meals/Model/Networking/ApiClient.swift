@@ -29,6 +29,7 @@ class ApiClient {
         case filterbyCategory(String)
         case recipeLookUp(String)
         case thumbImage(String)
+        case bannerImage(String)
         
         
         var stringValue: String {
@@ -39,6 +40,7 @@ class ApiClient {
             case .filterbyCategory(let category): return Endpoints.base + "filter.php?c=\(category)"
             case .recipeLookUp(let recipeId): return Endpoints.base + "lookup.php?i=\(recipeId)"
             case .thumbImage(let url): return url + "/preview"
+            case .bannerImage(let url): return url
                 
             }
         }
@@ -133,4 +135,114 @@ class ApiClient {
         task.resume()
     }
     
+    class func downloadBannerImage(imageUrl: String, completion: @escaping (Data?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.bannerImage(imageUrl).url) { data, response, error in
+            DispatchQueue.main.async {
+                completion(data, error)
+            }
+        }
+        task.resume()
+    }
+    
+    
+    /*
+     "meals": [
+             {
+                 "idMeal": "52968",
+                 "strMeal": "Mbuzi Choma (Roasted Goat)",
+                 "strDrinkAlternate": null,
+                 "strCategory": "Goat",
+                 "strArea": "Kenyan",
+                 "strInstructions": "1. Steps for the Meat: \r\n Roast meat over medium heat for 50 minutes and salt it as you turn it.\r\n\r\n2. Steps for Ugali:\r\nBring the water and salt to a boil in a heavy-bottomed saucepan. Stir in the cornmeal slowly, letting it fall through the fingers of your hand.\r\n\r\n3. Reduce heat to medium-low and continue stirring regularly, smashing any lumps with a spoon, until the mush pulls away from the sides of the pot and becomes very thick, about 10 minutes.\r\n\r\n4.Remove from heat and allow to cool.\r\n\r\n5. Place the ugali into a large serving bowl. Wet your hands with water, form a ball and serve.\r\n\r\n6. Steps for Kachumbari: Mix the tomatoes, onions, chili and coriander leaves in a bowl.\r\n\r\n7. Serve and enjoy!\r\n\r\n",
+                 "strMealThumb": "https://www.themealdb.com/images/media/meals/cuio7s1555492979.jpg",
+                 "strTags": "BBQ,Meat",
+                 "strYoutube": "",
+                 "strIngredient1": "Goat Meat",
+                 "strIngredient2": "Corn Flour",
+                 "strIngredient3": "Tomatoes",
+                 "strIngredient4": "Salt",
+                 "strIngredient5": "Onion",
+                 "strIngredient6": "Green Chilli",
+                 "strIngredient7": "Coriander Leaves",
+                 "strIngredient8": "",
+                 "strIngredient9": "",
+                 "strIngredient10": "",
+                 "strIngredient11": "",
+                 "strIngredient12": "",
+                 "strIngredient13": "",
+                 "strIngredient14": "",
+                 "strIngredient15": "",
+                 "strIngredient16": "",
+                 "strIngredient17": "",
+                 "strIngredient18": "",
+                 "strIngredient19": "",
+                 "strIngredient20": "",
+                 "strMeasure1": "1 kg",
+                 "strMeasure2": "1 kg",
+                 "strMeasure3": "2",
+                 "strMeasure4": "Pinch",
+                 "strMeasure5": "1",
+                 "strMeasure6": "1",
+                 "strMeasure7": "1  bunch",
+                 "strMeasure8": " ",
+                 "strMeasure9": " ",
+                 "strMeasure10": " ",
+                 "strMeasure11": " ",
+                 "strMeasure12": " ",
+                 "strMeasure13": " ",
+                 "strMeasure14": " ",
+                 "strMeasure15": " ",
+                 "strMeasure16": " ",
+                 "strMeasure17": " ",
+                 "strMeasure18": " ",
+                 "strMeasure19": " ",
+                 "strMeasure20": " ",
+                 "strSource": "",
+                 "dateModified": null
+             }
+         ]
+     */
+    
+    class func requestFullRecipe(recipeId: String, completion: @escaping (RestRecipe?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.recipeLookUp(recipeId).url) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            if let json = try? JSONSerialization.jsonObject(with: data) as? [String:Any],
+               let meals = json["meals"] as? [[String:Any]],
+               let name = meals[0]["strMeal"] as? String, meals.count > 0 {
+                print("strMeal \(name)")
+                let idMeal = (meals[0]["idMeal"] as? String) ??  ""
+                let strMeal = meals[0]["strMeal"] as? String ??  ""
+                let strCategory = meals[0]["strCategory"] as? String ??  ""
+                let strArea = meals[0]["strArea"] as? String ??  ""
+                let strInstructions = meals[0]["strInstructions"] as? String ??  ""
+                let strMealThumb = meals[0]["strMealThumb"] as? String ??  ""
+                let strTags = meals[0]["strTags"] as? String ??  ""
+                let strYoutube = meals[0]["strYoutube"] as? String ?? ""
+                let strSource = meals[0]["strSource"] as? String ??  ""
+                print("strInstructions \(strInstructions)")
+                var ingredients : [RecipeIngredients] = []
+                for n in 1...20 {
+                    let strIngredient = meals[0]["strIngredient\(n)"] as? String ?? ""
+                    if strIngredient != "" {
+                        let strMeasure = meals[0]["strMeasure\(n)"] as? String ?? ""
+                        let recipeIngredients = RecipeIngredients(name: strIngredient, quantity: strMeasure)
+                        ingredients.append(recipeIngredients)
+                        print(strIngredient + " " + strMeasure)
+                    }
+                    
+                }
+                let recipe = RestRecipe(name: strMeal , id: idMeal, category: strCategory, area: strArea, instructions: strInstructions, tags: strTags, imageUrl: strMealThumb, youtubeLink: strYoutube, source: strSource, ingredients: ingredients)
+                DispatchQueue.main.async {
+                    completion(recipe, nil)
+                }
+            }
+            
+        }
+        task.resume()
+    }
 }

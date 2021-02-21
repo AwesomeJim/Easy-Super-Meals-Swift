@@ -13,6 +13,7 @@ class FavouritesRecipeViewController: UIViewController{
         super.viewDidLoad()
         //set Title
         self.navigationItem.title = kfouariteTitle
+        
     }
 
 

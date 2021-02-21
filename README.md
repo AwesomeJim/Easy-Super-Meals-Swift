@@ -1,4 +1,4 @@
-# Easy-Super-Meals
+# Easy-Super-Meals Recipes
 This repository is an iOS App that allows users to search and save meals recipes. 
 
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org)
@@ -28,8 +28,8 @@ ScreenShot-1.
 
 ## Build and Runtime Requirements
 + Xcode 11.0 or later
-+ iOS 12.0 or later
-+ Mac OS X v10.10 or later
++ iOS v12.0 or later
++ Mac OS v10.10 or later
 
 ## Configuring and Runing the Project
 

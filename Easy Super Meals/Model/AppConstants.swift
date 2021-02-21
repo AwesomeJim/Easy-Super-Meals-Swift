@@ -13,3 +13,5 @@ let kfouariteTitle = "My Favourite Recipes"
 let kSearchTitle = "Search Recipes"
 
 let kSearchRecipeCell = "searchRecipeCell"
+
+let kIngredientsCell = "IngredientsCell"

@@ -15,7 +15,9 @@ Main Features:
 - Mark your favorite recipes and find them easily in your lists.
 - Manage your favorite recipes
 
-
+Screenshots
+------------
+ScreenShot-1.
 
 ## Built with
 
@@ -35,16 +37,18 @@ Configuring the Xcode project requires a few steps in Xcode to get up and runnin
 
 1) Configure each Mac and iOS device you plan to test, Create or use an existing Apple ID account.
 
-2) Configure the Team for each target within the project.
+2) Clone or download the App 
 
-Open the project in the Project navigator within Xcode and select each of the targets. Set the Team on the General tab to the team associated with your developer account.
+3) Opne the cloned or downloded project
 
-3)  Ensure iOS Developer is chosen for the Code Signing Identity setting in the Code Signing section of Target > Build Settings for the following Targets:
+4) Configure the Team for each target within the project.
+
+    - Open the project in the Project navigator within Xcode and select each of the targets. Set the Team on the General tab to the team associated with your developer account.
+
+5)  Ensure iOS Developer is chosen for the Code Signing Identity setting in the Code Signing section of Target > Build Settings for the following Targets, and change the Build identifier (package id/name)
+6) Select the Device you want the App to run on and Click run
 
 
-Screenshots
-------------
-ScreenShot-1.
 
 
 # Acknowledgments

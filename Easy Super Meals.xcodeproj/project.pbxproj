@@ -14,6 +14,7 @@
 		CEC7799625E24AFF00FF3308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7799525E24AFF00FF3308 /* Assets.xcassets */; };
 		CEC7799925E24AFF00FF3308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7799725E24AFF00FF3308 /* LaunchScreen.storyboard */; };
 		CEC779AB25E2547000FF3308 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEC779AA25E2547000FF3308 /* README.md */; };
+		CEC779B025E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEC779AE25E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CEC7799825E24AFF00FF3308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC7799A25E24AFF00FF3308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC779AA25E2547000FF3308 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEC779AF25E2655400FF3308 /* SuperMealsRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMealsRecipe.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		CEC779A825E24D0300FF3308 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				CEC779AE25E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				CEC7799125E24AFD00FF3308 /* ViewController.swift in Sources */,
 				CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */,
+				CEC779B025E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld in Sources */,
 				CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +405,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEC779AE25E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEC779AF25E2655400FF3308 /* SuperMealsRecipe.xcdatamodel */,
+			);
+			currentVersion = CEC779AF25E2655400FF3308 /* SuperMealsRecipe.xcdatamodel */;
+			path = SuperMealsRecipe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CEC7798125E24AFC00FF3308 /* Project object */;
 }

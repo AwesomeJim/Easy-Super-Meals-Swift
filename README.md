@@ -1,8 +1,7 @@
 # Easy-Super-Meals
 This repository is an iOS App that allows users to search and save meals recipes. 
 
-[![Swift Version][swift-image]][swift-url]
-[![Build Status][travis-image]][travis-url]
+[![Swift Version][swift-image]][swift-url](https://swift.org/)
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 
 Objective of the Project 

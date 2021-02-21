@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="663" y="-716"/>
         </scene>
-        <!--Favorite Recipe View Controller-->
+        <!--Favourites Recipe View Controller-->
         <scene sceneID="78M-i3-k7B">
             <objects>
-                <viewController id="OYq-tI-Aiv" customClass="FavoriteRecipeViewController" customModule="Easy_Super_Meals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OYq-tI-Aiv" customClass="FavouritesRecipeViewController" customModule="Easy_Super_Meals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="92S-sm-HA9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

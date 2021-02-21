@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */; };
 		CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */; };
-		CEC7799125E24AFD00FF3308 /* FavoriteRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7799025E24AFD00FF3308 /* FavoriteRecipeViewController.swift */; };
+		CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7799025E24AFD00FF3308 /* FavouritesRecipeViewController.swift */; };
 		CEC7799425E24AFD00FF3308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7799225E24AFD00FF3308 /* Main.storyboard */; };
 		CEC7799625E24AFF00FF3308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC7799525E24AFF00FF3308 /* Assets.xcassets */; };
 		CEC7799925E24AFF00FF3308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC7799725E24AFF00FF3308 /* LaunchScreen.storyboard */; };
@@ -17,13 +17,14 @@
 		CEC779B025E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEC779AE25E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld */; };
 		CEC779B425E26B3900FF3308 /* SearchRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779B325E26B3900FF3308 /* SearchRecipeViewController.swift */; };
 		CEC779B725E26B5600FF3308 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779B625E26B5600FF3308 /* RecipeDetailsViewController.swift */; };
+		CEC779BB25E26ECC00FF3308 /* UIViewController + UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779BA25E26ECC00FF3308 /* UIViewController + UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CEC7798925E24AFD00FF3308 /* Easy Super Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Super Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEC7799025E24AFD00FF3308 /* FavoriteRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeViewController.swift; sourceTree = "<group>"; };
+		CEC7799025E24AFD00FF3308 /* FavouritesRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesRecipeViewController.swift; sourceTree = "<group>"; };
 		CEC7799325E24AFD00FF3308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEC7799525E24AFF00FF3308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEC7799825E24AFF00FF3308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		CEC779AF25E2655400FF3308 /* SuperMealsRecipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperMealsRecipe.xcdatamodel; sourceTree = "<group>"; };
 		CEC779B325E26B3900FF3308 /* SearchRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewController.swift; sourceTree = "<group>"; };
 		CEC779B625E26B5600FF3308 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		CEC779BA25E26ECC00FF3308 /* UIViewController + UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + UIAlertController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +106,10 @@
 		CEC779A525E24C8C00FF3308 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CEC7799025E24AFD00FF3308 /* FavoriteRecipeViewController.swift */,
+				CEC7799025E24AFD00FF3308 /* FavouritesRecipeViewController.swift */,
 				CEC779B325E26B3900FF3308 /* SearchRecipeViewController.swift */,
 				CEC779B625E26B5600FF3308 /* RecipeDetailsViewController.swift */,
+				CEC779BA25E26ECC00FF3308 /* UIViewController + UIAlertController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,8 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC7799125E24AFD00FF3308 /* FavoriteRecipeViewController.swift in Sources */,
+				CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */,
 				CEC779B725E26B5600FF3308 /* RecipeDetailsViewController.swift in Sources */,
+				CEC779BB25E26ECC00FF3308 /* UIViewController + UIAlertController.swift in Sources */,
 				CEC779B425E26B3900FF3308 /* SearchRecipeViewController.swift in Sources */,
 				CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */,
 				CEC779B025E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld in Sources */,

@@ -144,6 +144,10 @@
                                     <constraint firstAttribute="height" constant="200" id="hyK-cz-vdc"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JjT-Qj-f6E">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FW4-yJ-JEx">
                                 <rect key="frame" x="0.0" y="298" width="414" height="515"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -183,13 +187,17 @@
                             <constraint firstItem="LPT-TA-Dvi" firstAttribute="top" secondItem="CyK-29-dU1" secondAttribute="top" id="CwS-Mo-uFV"/>
                             <constraint firstItem="LPT-TA-Dvi" firstAttribute="leading" secondItem="CyK-29-dU1" secondAttribute="leading" id="JS0-Wo-gIo"/>
                             <constraint firstItem="FW4-yJ-JEx" firstAttribute="leading" secondItem="CyK-29-dU1" secondAttribute="leading" id="YHi-Nx-Kge"/>
+                            <constraint firstItem="JjT-Qj-f6E" firstAttribute="centerY" secondItem="2zZ-cP-Zhv" secondAttribute="centerY" id="ZfB-wj-2q9"/>
+                            <constraint firstItem="JjT-Qj-f6E" firstAttribute="centerX" secondItem="2zZ-cP-Zhv" secondAttribute="centerX" id="drr-lI-u8z"/>
                             <constraint firstItem="FW4-yJ-JEx" firstAttribute="bottom" secondItem="CyK-29-dU1" secondAttribute="bottom" id="hTO-Ge-4Dq"/>
                             <constraint firstItem="FW4-yJ-JEx" firstAttribute="trailing" secondItem="CyK-29-dU1" secondAttribute="trailing" id="rIQ-fg-rlc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nRf-2K-F96"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="JjT-Qj-f6E" id="Pah-H6-L2D"/>
                         <outlet property="pickerViewController" destination="LtG-yu-bdd" id="Nzf-3I-HVP"/>
+                        <outlet property="selectedSegment" destination="rNC-2P-4Pe" id="Kea-hF-Lak"/>
                         <outlet property="tableView" destination="FW4-yJ-JEx" id="Xfz-nP-iwq"/>
                     </connections>
                 </viewController>

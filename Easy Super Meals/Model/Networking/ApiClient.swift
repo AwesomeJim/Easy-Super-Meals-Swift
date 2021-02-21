@@ -11,6 +11,8 @@ import Foundation
 //MARK:-Api Client
 class ApiClient {
     
+    
+    
     enum SearchCriteria : String {
         case categories = "list.php?c=list"
         case area = "list.php?a=list"
@@ -69,6 +71,43 @@ class ApiClient {
             }
         }
         task.resume()
+    }
+    
+    
+    
+    class func requestCategoriesList(completionHandler: @escaping ([String], Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.categoriesList.url, responseType: CategoriesList.self) { (response, error) in
+            if let response = response {
+                let catList = response.category.map({$0})
+                var stringlist: [String] = []
+                for category in catList {
+                    print("\(category.name)")
+                    stringlist.append(category.name)
+                }
+                completionHandler(stringlist, nil)
+                
+            }else {
+                completionHandler([], error)
+            }
+        }
+    }
+    
+    
+    class func requestAreaList(completionHandler: @escaping ([String], Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.areaList.url, responseType: AreaList.self) { (response, error) in
+            if let response = response {
+                let catList = response.area.map({$0})
+                var stringlist: [String] = []
+                for category in catList {
+                    print("\(category.name)")
+                    stringlist.append(category.name)
+                }
+                completionHandler(stringlist, nil)
+                
+            }else {
+                completionHandler([], error)
+            }
+        }
     }
     
 }

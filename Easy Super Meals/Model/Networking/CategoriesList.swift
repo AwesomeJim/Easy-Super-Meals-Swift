@@ -25,3 +25,22 @@ struct Category :Codable {
     }
     
 }
+
+
+
+struct AreaList :Codable {
+    let area : [Area]
+    
+    enum CodingKeys: String, CodingKey {
+        case area = "meals"
+    }
+}
+
+
+struct Area :Codable {
+    let name : String
+    enum CodingKeys: String, CodingKey {
+        case name = "strArea"
+    }
+    
+}

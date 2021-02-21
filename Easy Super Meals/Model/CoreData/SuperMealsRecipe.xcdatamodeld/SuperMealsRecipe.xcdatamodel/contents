@@ -8,7 +8,7 @@
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
         <attribute name="area" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
-        <attribute name="creationDate" optional="YES" attributeType="String"/>
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="imageThumbData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>

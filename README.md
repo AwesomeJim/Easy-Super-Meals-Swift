@@ -1,7 +1,7 @@
 # Easy-Super-Meals
 This repository is an iOS App that allows users to search and save meals recipes. 
 
-[![Swift Version][swift-image]][swift-url](https://swift.org/)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org)
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 
 Objective of the Project 
@@ -33,7 +33,7 @@ Main Features:
 
 Configuring the Xcode project requires a few steps in Xcode to get up and running  
 
-1) Configure each Mac and iOS device you plan to test with an iCloud account. Create or use an existing Apple ID account that supports iCloud.
+1) Configure each Mac and iOS device you plan to test, Create or use an existing Apple ID account.
 
 2) Configure the Team for each target within the project.
 

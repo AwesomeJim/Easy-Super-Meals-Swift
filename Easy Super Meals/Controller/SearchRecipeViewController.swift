@@ -9,13 +9,23 @@ import UIKit
 
 class SearchRecipeViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pickerViewController: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //set Title
+        self.navigationItem.title = kSearchTitle
     }
     
 
+    @IBAction func searchSegmentChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            
+        }else if sender.selectedSegmentIndex == 1{
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

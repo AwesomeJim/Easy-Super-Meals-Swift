@@ -19,6 +19,9 @@
 		CEC779B725E26B5600FF3308 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779B625E26B5600FF3308 /* RecipeDetailsViewController.swift */; };
 		CEC779BB25E26ECC00FF3308 /* UIViewController + UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779BA25E26ECC00FF3308 /* UIViewController + UIAlertController.swift */; };
 		CEC779C025E26FF200FF3308 /* Recipe + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779BF25E26FF200FF3308 /* Recipe + Extension.swift */; };
+		CEC779C325E27DD200FF3308 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779C225E27DD200FF3308 /* AppConstants.swift */; };
+		CEC779C625E28B2600FF3308 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779C525E28B2600FF3308 /* ApiClient.swift */; };
+		CEC779C925E2910F00FF3308 /* CategoriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC779C825E2910F00FF3308 /* CategoriesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		CEC779B625E26B5600FF3308 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		CEC779BA25E26ECC00FF3308 /* UIViewController + UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + UIAlertController.swift"; sourceTree = "<group>"; };
 		CEC779BF25E26FF200FF3308 /* Recipe + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe + Extension.swift"; sourceTree = "<group>"; };
+		CEC779C225E27DD200FF3308 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		CEC779C525E28B2600FF3308 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		CEC779C825E2910F00FF3308 /* CategoriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			children = (
 				CEC779A825E24D0300FF3308 /* CoreData */,
 				CEC779A925E24D1800FF3308 /* Networking */,
+				CEC779C225E27DD200FF3308 /* AppConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +144,8 @@
 		CEC779A925E24D1800FF3308 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				CEC779C525E28B2600FF3308 /* ApiClient.swift */,
+				CEC779C825E2910F00FF3308 /* CategoriesList.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */,
+				CEC779C325E27DD200FF3308 /* AppConstants.swift in Sources */,
 				CEC779B725E26B5600FF3308 /* RecipeDetailsViewController.swift in Sources */,
 				CEC779BB25E26ECC00FF3308 /* UIViewController + UIAlertController.swift in Sources */,
 				CEC779C025E26FF200FF3308 /* Recipe + Extension.swift in Sources */,
@@ -228,6 +238,8 @@
 				CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */,
 				CEC779B025E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld in Sources */,
 				CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */,
+				CEC779C925E2910F00FF3308 /* CategoriesList.swift in Sources */,
+				CEC779C625E28B2600FF3308 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

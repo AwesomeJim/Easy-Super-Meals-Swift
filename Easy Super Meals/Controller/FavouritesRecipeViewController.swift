@@ -11,7 +11,8 @@ class FavouritesRecipeViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //set Title
+        self.navigationItem.title = kfouariteTitle
     }
 
 

@@ -10,7 +10,7 @@ This project was implemented as the Capstone Project (Final Project) for [Udacit
 
 Main Features:
 --------------
-- Search online for variety of unique great recipes recipes
+- Search online for variety of unique great recipes
 - Filter your search by meals caterogies or area/location
 - Mark your favorite recipes and find them easily in your lists.
 - Manage your favorite recipes

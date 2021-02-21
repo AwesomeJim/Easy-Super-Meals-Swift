@@ -28,15 +28,17 @@ class ApiClient {
         case filterbyArea(String)
         case filterbyCategory(String)
         case recipeLookUp(String)
+        case thumbImage(String)
         
         
         var stringValue: String {
             switch self {
             case .categoriesList: return Endpoints.base + SearchCriteria.categories.rawValue
             case .areaList: return Endpoints.base + SearchCriteria.area.rawValue
-            case .filterbyArea(let area): return Endpoints.base + "filter.php?a=\(area))"
-            case .filterbyCategory(let category): return Endpoints.base + "filter.php?c=\(category))"
+            case .filterbyArea(let area): return Endpoints.base + "filter.php?a=\(area)"
+            case .filterbyCategory(let category): return Endpoints.base + "filter.php?c=\(category)"
             case .recipeLookUp(let recipeId): return Endpoints.base + "lookup.php?i=\(recipeId)"
+            case .thumbImage(let url): return url + "/preview"
                 
             }
         }
@@ -108,6 +110,27 @@ class ApiClient {
                 completionHandler([], error)
             }
         }
+    }
+    
+    
+    class func requestRecipeList(url:URL, completionHandler: @escaping ([ShortRecipe], Error?) -> Void) {
+        taskForGETRequest(url: url, responseType: RecipeListResponse.self) { (response, error) in
+            if let response = response {
+                completionHandler(response.list, nil)
+            }else {
+                completionHandler([], error)
+            }
+        }
+    }
+    
+    
+    class func downloadThumbImage(path: String, completion: @escaping (Data?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.thumbImage(path).url) { data, response, error in
+            DispatchQueue.main.async {
+                completion(data, error)
+            }
+        }
+        task.resume()
     }
     
 }

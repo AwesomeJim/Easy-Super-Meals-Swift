@@ -31,7 +31,7 @@ ScreenShot-1.
 + iOS 12.0 or later
 + Mac OS X v10.10 or later
 
-## Configuring the Project
+## Configuring and Runing the Project
 
 Configuring the Xcode project requires a few steps in Xcode to get up and running  
 
@@ -51,7 +51,7 @@ Configuring the Xcode project requires a few steps in Xcode to get up and runnin
 
 
 
-# Acknowledgments
+### Acknowledgments
 * Hat tip  to the  [TheMealDB Api](https://www.themealdb.com/api.php) Team for a simple and Amazing API 
 
 License

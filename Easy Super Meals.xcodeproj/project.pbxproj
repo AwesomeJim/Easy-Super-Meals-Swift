@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE58EE1925E402AD00983294 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58EE1825E402AD00983294 /* DataController.swift */; };
 		CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */; };
 		CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */; };
 		CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7799025E24AFD00FF3308 /* FavouritesRecipeViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE58EE1825E402AD00983294 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		CEC7798925E24AFD00FF3308 /* Easy Super Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Super Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				CEC779BD25E26FB700FF3308 /* Managed Extentions */,
 				CEC779AE25E2655400FF3308 /* SuperMealsRecipe.xcdatamodeld */,
+				CE58EE1825E402AD00983294 /* DataController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */,
 				CEC779C925E2910F00FF3308 /* CategoriesList.swift in Sources */,
 				CEC779CC25E2A40800FF3308 /* RecipeListResponse.swift in Sources */,
+				CE58EE1925E402AD00983294 /* DataController.swift in Sources */,
 				CEC779C625E28B2600FF3308 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -91,27 +91,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhM-lW-ltM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhM-lW-ltM">
                                 <rect key="frame" x="0.0" y="88" width="414" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="AOs-Hd-bgY"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDD-uB-tTW" userLabel="TitleLabel">
-                                <rect key="frame" x="0.0" y="268" width="414" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDD-uB-tTW" userLabel="TitleLabel">
+                                <rect key="frame" x="0.0" y="268" width="414" height="33.5"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xxs-LR-59a">
-                                <rect key="frame" x="0.0" y="297" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="310" width="414" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OGh-aI-6IH">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Y-QZ-QON">
-                                                <rect key="frame" x="0.0" y="21.5" width="138" height="25"/>
-                                                <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Y-QZ-QON">
+                                                <rect key="frame" x="0.0" y="24.5" width="138" height="21.5"/>
+                                                <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UaZ-UD-Teg">
                                                 <rect key="frame" x="138" y="25.5" width="138" height="19"/>
@@ -144,7 +145,7 @@
                                 </constraints>
                             </stackView>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKZ-oT-4YA">
-                                <rect key="frame" x="0.0" y="417" width="414" height="350"/>
+                                <rect key="frame" x="0.0" y="430" width="414" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="xVW-qv-Jrg"/>
@@ -155,10 +156,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P30-XH-8HD">
-                                <rect key="frame" x="0.0" y="417" width="414" height="396"/>
+                                <rect key="frame" x="0.0" y="430" width="414" height="383"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="37G-2U-Sxm">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="383"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientsCell" textLabel="BsS-r6-LgH" detailTextLabel="VJi-Qz-JAg" style="IBUITableViewCellStyleValue1" id="caz-Oc-1AJ">
@@ -218,6 +219,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vlN-KU-QSh"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="IngredientsView" destination="P30-XH-8HD" id="V1z-YJ-0Dm"/>
                         <outlet property="InstructionsTextView" destination="xKZ-oT-4YA" id="Bq7-rH-zbC"/>
@@ -337,7 +339,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="w.circle" catalog="system" width="128" height="121"/>
         <image name="y.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">

@@ -36,9 +36,49 @@ class SearchRecipeViewController: UIViewController {
     @IBAction func searchSegmentChanged(_ sender: UISegmentedControl) {
         loadList(selectedSegmentIndex: sender.selectedSegmentIndex)
     }
+
     
+    //-----------------------------------------------------------------
+    // MARK: - Navigation
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "recipeSegue" {
+            let detailVC = segue.destination as! RecipeDetailsViewController
+            detailVC.shortRecipe = sender as? ShortRecipe
+        }
+    }
     
+    //-----------------------------------------------------------------
+    //MARK:-Helper methods
+    //Load Recipe List
+    func loadRecipeList(selectedSegmentIndex:Int, queryString:String) {
+        activityIndicator.startAnimating()
+        var url :URL?
+        if selectedSegmentIndex == 0{
+            url = ApiClient.Endpoints.filterbyCategory(queryString).url
+            
+        }else if selectedSegmentIndex == 1 {
+            url = ApiClient.Endpoints.filterbyArea(queryString).url
+        }
+        guard let requestUrl = url else {
+            return
+        }
+        print("requestUrl   \(requestUrl)")
+        ApiClient.requestRecipeList(url: requestUrl, completionHandler: { (recipeList, error) in
+            self.activityIndicator.stopAnimating()
+            if error == nil {
+                self.recipeList = recipeList
+                self.tableView.reloadData()
+            }else {
+                self.showAlertDialog(title: "Loading Error", message: error?.localizedDescription ?? "Failed to load data")
+            }
+        })
+    }
+    
+    //Load categoty or Location List 
     func loadList(selectedSegmentIndex:Int) {
         activityIndicator.startAnimating()
         if selectedSegmentIndex == 0{
@@ -65,47 +105,9 @@ class SearchRecipeViewController: UIViewController {
     }
     
     
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "recipeSegue" {
-            let detailVC = segue.destination as! RecipeDetailsViewController
-            detailVC.shortRecipe = sender as? ShortRecipe
-        }
-    }
-    
-    
-    func loadRecipeList(selectedSegmentIndex:Int, queryString:String) {
-        activityIndicator.startAnimating()
-        var url :URL?
-        if selectedSegmentIndex == 0{
-            url = ApiClient.Endpoints.filterbyCategory(queryString).url
-            
-        }else if selectedSegmentIndex == 1 {
-            url = ApiClient.Endpoints.filterbyArea(queryString).url
-        }
-        guard let requestUrl = url else {
-            return
-        }
-        print("requestUrl   \(requestUrl)")
-        ApiClient.requestRecipeList(url: requestUrl, completionHandler: { (recipeList, error) in
-            self.activityIndicator.stopAnimating()
-            if error == nil {
-                self.recipeList = recipeList
-                self.tableView.reloadData()
-            }else {
-                self.showAlertDialog(title: "Loading Error", message: error?.localizedDescription ?? "Failed to load data")
-            }
-        })
-    }
-    
-    
-    
 }
 
+//-----------------------------------------------------------------
 //MARK:-UIPickerViewDelegate
 
 extension SearchRecipeViewController: UIPickerViewDataSource, UIPickerViewDelegate {
@@ -131,6 +133,7 @@ extension SearchRecipeViewController: UIPickerViewDataSource, UIPickerViewDelega
     
 }
 
+//-----------------------------------------------------------------
 // MARK: Table View Data Source extention
 
 extension SearchRecipeViewController: UITableViewDataSource, UITableViewDelegate{

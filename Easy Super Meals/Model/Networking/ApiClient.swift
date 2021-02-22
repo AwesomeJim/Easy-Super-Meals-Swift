@@ -78,7 +78,7 @@ class ApiClient {
     }
     
     
-    
+    //MARK:-Get Categories List
     class func requestCategoriesList(completionHandler: @escaping ([String], Error?) -> Void) {
         taskForGETRequest(url: Endpoints.categoriesList.url, responseType: CategoriesList.self) { (response, error) in
             if let response = response {
@@ -96,7 +96,7 @@ class ApiClient {
         }
     }
     
-    
+    //MARK:-Get Location Area List
     class func requestAreaList(completionHandler: @escaping ([String], Error?) -> Void) {
         taskForGETRequest(url: Endpoints.areaList.url, responseType: AreaList.self) { (response, error) in
             if let response = response {
@@ -115,6 +115,10 @@ class ApiClient {
     }
     
     
+    //MARK:-Get Short Recipe List
+    /*
+     Here we get the short recipe list base on the URL, either by List or by Category or Location area
+     */
     class func requestRecipeList(url:URL, completionHandler: @escaping ([ShortRecipe], Error?) -> Void) {
         taskForGETRequest(url: url, responseType: RecipeListResponse.self) { (response, error) in
             if let response = response {
@@ -126,6 +130,10 @@ class ApiClient {
     }
     
     
+    //MARK:-Download Recipe Thumb image
+    /*
+     For the table view we use thumb images to save data
+     */
     class func downloadThumbImage(path: String, completion: @escaping (Data?, Error?) -> Void) {
         let task = URLSession.shared.dataTask(with: Endpoints.thumbImage(path).url) { data, response, error in
             DispatchQueue.main.async {
@@ -135,6 +143,10 @@ class ApiClient {
         task.resume()
     }
     
+    //MARK:-Download Recipe Banner
+    /*
+     download the full image Banner
+     */
     class func downloadBannerImage(imageUrl: String, completion: @escaping (Data?, Error?) -> Void) {
         let task = URLSession.shared.dataTask(with: Endpoints.bannerImage(imageUrl).url) { data, response, error in
             DispatchQueue.main.async {
@@ -145,6 +157,8 @@ class ApiClient {
     }
     
     
+    
+    //MARK:-Full Recipe Sample Response
     /*
      "meals": [
              {
@@ -202,7 +216,12 @@ class ApiClient {
              }
          ]
      */
-    
+    //MARK:-Get Full Recipe
+    /*
+     The Full recipe response is a bit messy, for instance the Ingredients (strIngredient1) and their quantity (strMeasure6) are not
+     in an array, therefore I had to make a trade off to  use JSONSerialization instead of Codable protocal.
+     as a result I converted recipe Ingredients to a proper array
+     */
     class func requestFullRecipe(recipeId: String, completion: @escaping (RestRecipe?, Error?) -> Void) {
         let task = URLSession.shared.dataTask(with: Endpoints.recipeLookUp(recipeId).url) { data, response, error in
             guard let data = data else {
@@ -212,11 +231,10 @@ class ApiClient {
                 return
             }
             if let json = try? JSONSerialization.jsonObject(with: data) as? [String:Any],
-               let meals = json["meals"] as? [[String:Any]],
-               let name = meals[0]["strMeal"] as? String, meals.count > 0 {
-                print("strMeal \(name)")
+               let meals = json["meals"] as? [[String:Any]], // the response comes as an Array
+               let strMeal = meals[0]["strMeal"] as? String, meals.count > 0 {  //make sure the "meals array" is greater than zero and use the first Item
+                //here we extract the Recipe Details which could be nill, so we set an empty string as default
                 let idMeal = (meals[0]["idMeal"] as? String) ??  ""
-                let strMeal = meals[0]["strMeal"] as? String ??  ""
                 let strCategory = meals[0]["strCategory"] as? String ??  ""
                 let strArea = meals[0]["strArea"] as? String ??  ""
                 let strInstructions = meals[0]["strInstructions"] as? String ??  ""
@@ -224,7 +242,12 @@ class ApiClient {
                 let strTags = meals[0]["strTags"] as? String ??  ""
                 let strYoutube = meals[0]["strYoutube"] as? String ?? ""
                 let strSource = meals[0]["strSource"] as? String ??  ""
-                print("strInstructions \(strInstructions)")
+               
+                /*
+                 Here we want we convert the recipe Ingredients to a proper array
+                 From the response we know strIngredient range from 0...20 hence we use a for loop.
+                 loop through and put Ingredients and its respective measure (quantity) in a RecipeIngredients array
+                 */
                 var ingredients : [RecipeIngredients] = []
                 for n in 1...20 {
                     let strIngredient = meals[0]["strIngredient\(n)"] as? String ?? ""
@@ -232,10 +255,13 @@ class ApiClient {
                         let strMeasure = meals[0]["strMeasure\(n)"] as? String ?? ""
                         let recipeIngredients = RecipeIngredients(name: strIngredient, quantity: strMeasure)
                         ingredients.append(recipeIngredients)
-                        print(strIngredient + " " + strMeasure)
                     }
                     
                 }
+                /*
+                 Finally we have a well formatted Recipe Data
+                 we put it in a RestRecipe struct
+                 */
                 let recipe = RestRecipe(name: strMeal , id: idMeal, category: strCategory, area: strArea, instructions: strInstructions, tags: strTags, imageUrl: strMealThumb, youtubeLink: strYoutube, source: strSource, ingredients: ingredients)
                 DispatchQueue.main.async {
                     completion(recipe, nil)

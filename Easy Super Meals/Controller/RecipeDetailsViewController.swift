@@ -9,6 +9,7 @@ import UIKit
 
 class RecipeDetailsViewController: UIViewController {
     
+    //MARK:-Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var webImageView: UIImageView!
@@ -20,8 +21,9 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var InstructionsTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
-    var shortRecipe:ShortRecipe?
+    //MARK:-Properties
     
+    var shortRecipe:ShortRecipe?
     var ingredients:[RecipeIngredients] = []
     
     override func viewDidLoad() {
@@ -31,7 +33,6 @@ class RecipeDetailsViewController: UIViewController {
         ApiClient.requestFullRecipe(recipeId: shortRecipe!.id) { (response, error) in
             if error == nil {
                 if let recipe = response {
-                    print("The returened Recipe is \(recipe.name)")
                     self.populateRecipe(recipe: recipe)
                     ApiClient.downloadBannerImage(imageUrl:  recipe.imageUrl) { data, error in
                         guard let data = data else {
@@ -45,16 +46,7 @@ class RecipeDetailsViewController: UIViewController {
         }
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
     func populateRecipe(recipe:RestRecipe)  {
         titleLabel.text = recipe.name
@@ -80,7 +72,7 @@ class RecipeDetailsViewController: UIViewController {
 }
 
 
-// MARK: Table View Data Source extention
+// MARK: ingredients Table View Data Source extention
 
 extension RecipeDetailsViewController: UITableViewDataSource, UITableViewDelegate{
     
@@ -99,8 +91,7 @@ extension RecipeDetailsViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shortRecipe = self.ingredients[(indexPath as NSIndexPath).row]
-       
+        
     }
     
     

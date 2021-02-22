@@ -12,12 +12,12 @@ class RecipeDetailsViewController: UIViewController {
     //MARK:-Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bannerImageView: UIImageView!
-    @IBOutlet weak var webImageView: UIImageView!
-    @IBOutlet weak var youTubeImageView: UIImageView!
-    @IBOutlet weak var favouriteImageView: UIImageView!
     @IBOutlet weak var selectedSegment: UISegmentedControl!
     @IBOutlet weak var IngredientsView: UIStackView!
     
+    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var youTubeButton: UIButton!
+    @IBOutlet weak var webButton: UIButton!
     @IBOutlet weak var InstructionsTextView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,7 +25,11 @@ class RecipeDetailsViewController: UIViewController {
     
     var shortRecipe:ShortRecipe?
     var ingredients:[RecipeIngredients] = []
+    var imageData: Data?
+    var restRecipe:RestRecipe?
     
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -33,16 +37,23 @@ class RecipeDetailsViewController: UIViewController {
         ApiClient.requestFullRecipe(recipeId: shortRecipe!.id) { (response, error) in
             if error == nil {
                 if let recipe = response {
+                    self.restRecipe = response
                     self.populateRecipe(recipe: recipe)
                     ApiClient.downloadBannerImage(imageUrl:  recipe.imageUrl) { data, error in
                         guard let data = data else {
                             return
                         }
+                        self.imageData = data
                         let image = UIImage(data: data)
                         self.bannerImageView.image = image
                     }
                 }
             }
+        }
+        if #available(iOS 13.0, *) {
+            favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.selected)
+        } else {
+            // Fallback on earlier versions
         }
     }
     
@@ -64,6 +75,41 @@ class RecipeDetailsViewController: UIViewController {
             InstructionsTextView.isHidden = false
             IngredientsView.isHidden = true
         }
+    }
+    /// save recipe to the Core data
+    func saveRecipe() {
+        let recipe = Recipe(context: DataController.shared.viewContext)
+        recipe.name = restRecipe?.name
+        recipe.creationDate = Date()
+        recipe.id = restRecipe?.id
+        recipe.tags = restRecipe?.tags
+        recipe.instructions = restRecipe?.instructions
+        recipe.imageUrl = restRecipe?.imageUrl
+        recipe.imageThumbData = imageData
+        recipe.area = restRecipe?.area
+        recipe.category = restRecipe?.category
+        recipe.source = restRecipe?.source
+        recipe.youtubeLink = restRecipe?.youtubeLink
+        try? DataController.shared.viewContext.save()
+        for ingredient in ingredients {
+            let ingre = Ingredients(context: DataController.shared.viewContext)
+            ingre.name = ingredient.name
+            ingre.quantity = ingredient.quantity
+            ingre.recipe = recipe
+            try? DataController.shared.backgroundContext.save()
+        }
+      
+    }
+    
+    @IBAction func webButtonPressed(_ sender: UIButton) {
+    }
+    @IBAction func youtubeButtonPressed(_ sender: UIButton) {
+    }
+    
+   
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        print("Save Button Clicked")
+        saveRecipe()
     }
     
     @IBAction func selecedSegmentValueChanged(_ sender: UISegmentedControl) {

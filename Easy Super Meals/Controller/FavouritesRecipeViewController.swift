@@ -8,11 +8,11 @@
 import UIKit
 import CoreData
 
-class FavouritesRecipeViewController: UIViewController {
+class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
     
     /// A table view that displays a list of saved recipes
     @IBOutlet weak var tableView: UITableView!
-
+    
     
     var fetchedResultsController:NSFetchedResultsController<Recipe>!
     
@@ -20,10 +20,26 @@ class FavouritesRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //set Title
-        tableView.delegate = self
         tableView.dataSource = self
         self.navigationItem.title = kfouariteTitle
+        navigationItem.rightBarButtonItem = editButtonItem
+        setUpFetchedResultsController()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpFetchedResultsController()
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: false)
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        }
+        tableView.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        fetchedResultsController = nil
     }
     
     //fetch saved data
@@ -48,12 +64,21 @@ class FavouritesRecipeViewController: UIViewController {
         DataController.shared.viewContext.delete(recipeToDelete)
         try? DataController.shared.viewContext.save()
     }
-}
+    
+    func updateEditButtonState() {
+        if let section = fetchedResultsController.sections {
+            navigationItem.rightBarButtonItem?.isEnabled = section[0].numberOfObjects > 0
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
+    }
 
 // -------------------------------------------------------------------------
 // MARK: - Table view data source
-
-extension FavouritesRecipeViewController :UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 1
     }
@@ -79,7 +104,7 @@ extension FavouritesRecipeViewController :UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
-        // case .delete: deleteNote(at: indexPath)
+        case .delete: deleteDeleteRecipe(at: indexPath)
         default: () // Unsupported
         }
     }

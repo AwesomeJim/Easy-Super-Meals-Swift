@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE58EE1925E402AD00983294 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58EE1825E402AD00983294 /* DataController.swift */; };
+		CE72E8E725E589D200AD8886 /* SavedRecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72E8E625E589D200AD8886 /* SavedRecipeDetailsViewController.swift */; };
 		CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */; };
 		CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */; };
 		CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7799025E24AFD00FF3308 /* FavouritesRecipeViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		CE58EE1825E402AD00983294 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		CE72E8E625E589D200AD8886 /* SavedRecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeDetailsViewController.swift; sourceTree = "<group>"; };
 		CEC7798925E24AFD00FF3308 /* Easy Super Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Super Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				CEC779B325E26B3900FF3308 /* SearchRecipeViewController.swift */,
 				CEC779B625E26B5600FF3308 /* RecipeDetailsViewController.swift */,
 				CEC779BA25E26ECC00FF3308 /* UIViewController + UIAlertController.swift */,
+				CE72E8E625E589D200AD8886 /* SavedRecipeDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */,
 				CEC779C325E27DD200FF3308 /* AppConstants.swift in Sources */,
 				CEC779B725E26B5600FF3308 /* RecipeDetailsViewController.swift in Sources */,
+				CE72E8E725E589D200AD8886 /* SavedRecipeDetailsViewController.swift in Sources */,
 				CEC779BB25E26ECC00FF3308 /* UIViewController + UIAlertController.swift in Sources */,
 				CEC779C025E26FF200FF3308 /* Recipe + Extension.swift in Sources */,
 				CEC779B425E26B3900FF3308 /* SearchRecipeViewController.swift in Sources */,

@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 
+//MARK:- FavouritesRecipeViewController
+
 class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
     
     /// A table view that displays a list of saved recipes
@@ -42,7 +44,7 @@ class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
         fetchedResultsController = nil
     }
     
-    //fetch saved data
+    //fetch saved data using the fetchedResultsController
     fileprivate func setUpFetchedResultsController() {
         let fetchRequest:NSFetchRequest<Recipe> = Recipe.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
@@ -98,7 +100,7 @@ class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
         // Set the name and image
         cell.textLabel?.text = aRecipe.name
         cell.imageView?.image = UIImage(data: aRecipe.imageThumbData! as Data)
-        
+        cell.detailTextLabel?.text = aRecipe.area! + " - " + aRecipe.category!
         return cell
     }
     
@@ -127,15 +129,18 @@ extension FavouritesRecipeViewController:NSFetchedResultsControllerDelegate {
             tableView.reloadRows(at: [indexPath!], with: .fade)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
+        default: () // Unsupported
         }
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
+    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
+    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         let indexSet = IndexSet(integer: sectionIndex)
         switch type {
@@ -143,6 +148,7 @@ extension FavouritesRecipeViewController:NSFetchedResultsControllerDelegate {
         case .delete: tableView.deleteSections(indexSet, with: .fade)
         case .update, .move:
             fatalError("Invalid change type in controller(_:didChange:atSectionIndex:for:). Only .insert or .delete should be possible.")
+        default: () // Unsupported
         }
     }
 }

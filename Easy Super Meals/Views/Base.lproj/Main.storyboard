@@ -130,20 +130,23 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRk-0x-09u">
                                                 <rect key="frame" x="0.0" y="24" width="138" height="22"/>
+                                                <color key="tintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="heart" catalog="system"/>
                                                 <connections>
                                                     <action selector="favoriteButtonPressed:" destination="yN4-Na-fw5" eventType="touchUpInside" id="hxt-xi-JlO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvY-5G-UE1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvY-5G-UE1">
                                                 <rect key="frame" x="138" y="24" width="138" height="22"/>
+                                                <color key="tintColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="y.circle.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="youtubeButtonPressed:" destination="yN4-Na-fw5" eventType="touchUpInside" id="FI4-ut-r1q"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe1-gt-tMm">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe1-gt-tMm">
                                                 <rect key="frame" x="276" y="24" width="138" height="22"/>
+                                                <color key="tintColor" red="0.065494121050000007" green="0.40332118700000003" blue="0.893605655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="w.circle.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="webButtonPressed:" destination="yN4-Na-fw5" eventType="touchUpInside" id="Sv2-yi-Q6F"/>

@@ -133,8 +133,8 @@ extension SearchRecipeViewController: UIPickerViewDataSource, UIPickerViewDelega
     
 }
 
-//-----------------------------------------------------------------
-// MARK: Table View Data Source extention
+    // -------------------------------------------------------------------------
+    // MARK: Table View Data Source extention
 
 extension SearchRecipeViewController: UITableViewDataSource, UITableViewDelegate{
     

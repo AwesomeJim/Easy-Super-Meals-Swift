@@ -14,6 +14,7 @@ Main Features:
 - Filter your search by meals caterogies or area/location
 - Mark your favorite recipes and find them easily in your lists.
 - Manage your favorite recipes
+- Read more about the recipes from the recipe Weblink and youtube 
 
 Screenshots
 ------------

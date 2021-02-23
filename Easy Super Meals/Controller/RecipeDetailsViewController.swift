@@ -70,6 +70,7 @@ class RecipeDetailsViewController: UIViewController {
     func populateRecipe(recipe:RestRecipe)  {
         titleLabel.text = recipe.name
         ingredients = recipe.ingredients
+        self.navigationItem.title = recipe.area + " - " + recipe.category
         InstructionsTextView.text = recipe.instructions
         tableView.reloadData()
         showIngredientsorInstructions(selectedSegmentIndex: selectedSegment.selectedSegmentIndex)

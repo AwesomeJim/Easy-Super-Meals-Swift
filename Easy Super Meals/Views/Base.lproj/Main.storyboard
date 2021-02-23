@@ -401,16 +401,25 @@
                                                 <rect key="frame" x="0.0" y="24" width="138" height="22"/>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="heart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="favButtonPressed:" destination="QxR-EA-BQ8" eventType="touchUpInside" id="XNo-gQ-kOR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2w-uK-p6W">
                                                 <rect key="frame" x="138" y="24" width="138" height="22"/>
                                                 <color key="tintColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="y.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="youtubeButton:" destination="QxR-EA-BQ8" eventType="touchUpInside" id="nlf-GO-Eak"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTA-UM-R67">
                                                 <rect key="frame" x="276" y="24" width="138" height="22"/>
                                                 <color key="tintColor" red="0.065494121050000007" green="0.40332118700000003" blue="0.893605655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button" image="w.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="webButtonPressed:" destination="QxR-EA-BQ8" eventType="touchUpInside" id="WWZ-Yu-Pm9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -424,6 +433,9 @@
                                             <segment title="Instructions"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="segementIndexChanged:" destination="QxR-EA-BQ8" eventType="valueChanged" id="4ag-Gx-t2G"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -509,6 +521,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="fer-hy-can"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="favButton" destination="kO3-Ow-E70" id="6ej-nq-ZAQ"/>
+                        <outlet property="recipeBannerImageView" destination="bzZ-Yu-dQ7" id="ejr-rg-BnO"/>
+                        <outlet property="recipeInstrusctionsTextView" destination="59B-Ei-atn" id="4Ln-o8-PQH"/>
+                        <outlet property="recipeTitleLabel" destination="fTa-iC-x3D" id="qB2-ct-WSJ"/>
+                        <outlet property="selectedSegment" destination="Xdo-Bd-NXy" id="1Vg-X7-j0d"/>
+                        <outlet property="tableView" destination="QTg-kj-jea" id="4nP-Pc-9K2"/>
+                        <outlet property="webButton" destination="bTA-UM-R67" id="XsJ-ra-i4r"/>
+                        <outlet property="youtubeButton" destination="J2w-uK-p6W" id="pBF-v3-MR2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaU-dy-egx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

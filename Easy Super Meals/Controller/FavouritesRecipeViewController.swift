@@ -111,6 +111,12 @@ class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // let shortRecipe = self.recipeList[(indexPath as NSIndexPath).row]
+        performSegue(withIdentifier: "savedRecipeSegue", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 

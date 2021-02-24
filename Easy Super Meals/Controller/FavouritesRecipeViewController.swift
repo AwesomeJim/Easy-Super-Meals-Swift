@@ -100,10 +100,19 @@ extension FavouritesRecipeViewController:UITableViewDataSource, UITableViewDeleg
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 1
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        let  count = fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        if count == 0 {
+            tableView.setEmptyView(title: "You don't have any saved Recipes", message: "Your saved Recipes will appear here.", messageImage: #imageLiteral(resourceName: "heart_filled"))
+        }
+        else {
+            tableView.restore()
+        }
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -175,3 +184,6 @@ extension FavouritesRecipeViewController:NSFetchedResultsControllerDelegate {
         }
     }
 }
+
+
+

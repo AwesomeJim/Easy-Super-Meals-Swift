@@ -13,7 +13,14 @@
         <scene sceneID="2F7-cZ-aDc">
             <objects>
                 <navigationController title="Favourites Recipes" id="yGy-jR-oY4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="xlu-GE-2jY"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="xlu-GE-2jY">
+                        <color key="badgeColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E3s-l4-Ohg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -92,6 +99,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="yGy-jR-oY4" kind="relationship" relationship="viewControllers" id="7B7-j6-zPc"/>
@@ -276,13 +284,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JB5-tr-Hbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="-31"/>
+            <point key="canvasLocation" x="2822" y="27"/>
         </scene>
         <!--Search Recipes-->
         <scene sceneID="9R7-rU-Q01">
             <objects>
                 <navigationController title="Search Recipes" id="dqW-9T-tfo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="r79-bN-hMh"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="r79-bN-hMh">
+                        <color key="badgeColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9AH-ss-dmj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -377,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQm-TZ-rjp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566.6666666666667" y="21.428571428571427"/>
+            <point key="canvasLocation" x="1670" y="27"/>
         </scene>
         <!--Saved Recipe Details View Controller-->
         <scene sceneID="wAa-gK-Vdh">
@@ -553,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaU-dy-egx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="-735"/>
+            <point key="canvasLocation" x="2716" y="-723"/>
         </scene>
     </scenes>
     <resources>

@@ -20,3 +20,10 @@ let kIngredientsCell = "IngredientsCell"
 let kSavedRecipeCell = "savedRecipeCell"
 
 let kNavTosavedRecipeSegue = "savedRecipeSegue"
+
+let kRecipeSegue = "recipeSegue"
+
+let kFailedtoLoadErrorTitle = "Loading Error"
+
+let kfailedErrorMesg = "Failed to load data"
+

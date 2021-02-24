@@ -17,6 +17,8 @@ class SearchRecipeViewController: UIViewController {
     // MARK: Properties
     var recipeList:[ShortRecipe] = []
     var catList:[String] = []
+    let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    let selectedtitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class SearchRecipeViewController: UIViewController {
         loadList(selectedSegmentIndex: selectedSegment.selectedSegmentIndex)
         tableView.delegate = self
         tableView.dataSource = self
+        selectedSegment.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        selectedSegment.setTitleTextAttributes(selectedtitleTextAttributes, for: .selected)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +77,7 @@ class SearchRecipeViewController: UIViewController {
                 self.recipeList = recipeList
                 self.tableView.reloadData()
             }else {
-                self.showAlertDialog(title: "Loading Error", message: error?.localizedDescription ?? "Failed to load data")
+                self.showAlertDialog(title: kFailedtoLoadErrorTitle, message: error?.localizedDescription ?? kfailedErrorMesg)
             }
         })
     }
@@ -88,7 +92,7 @@ class SearchRecipeViewController: UIViewController {
                     self.catList = catList
                     self.pickerViewController.reloadAllComponents()
                 }else {
-                    self.showAlertDialog(title: "Loading Error", message: error?.localizedDescription ?? "Failed to load data")
+                    self.showAlertDialog(title: kFailedtoLoadErrorTitle, message: error?.localizedDescription ?? kfailedErrorMesg)
                 }
             }
         }else if selectedSegmentIndex == 1 {
@@ -98,7 +102,7 @@ class SearchRecipeViewController: UIViewController {
                     self.catList = arealist
                     self.pickerViewController.reloadAllComponents()
                 }else {
-                    self.showAlertDialog(title: "Loading Error", message: error?.localizedDescription ?? "Failed to load data")
+                    self.showAlertDialog(title: kFailedtoLoadErrorTitle, message: error?.localizedDescription ?? kfailedErrorMesg)
                 }
             }
         }
@@ -164,7 +168,7 @@ extension SearchRecipeViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shortRecipe = self.recipeList[(indexPath as NSIndexPath).row]
-        performSegue(withIdentifier: "recipeSegue", sender: shortRecipe)
+        performSegue(withIdentifier: kRecipeSegue, sender: shortRecipe)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

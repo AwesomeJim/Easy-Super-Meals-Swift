@@ -54,6 +54,7 @@ Configuring the Xcode project requires a few steps in Xcode to get up and runnin
 
 ### Acknowledgments
 * Hat tip  to the  [TheMealDB Api](https://www.themealdb.com/api.php) Team for a simple and Amazing API 
+*  [Taha Sönmez](https://github.com/tahasonmez/handleEmptyTableView) for his awesome trick of how to [Handle Empty TableView in Swift 4 & iOS 11](https://medium.com/@mtssonmez/handle-empty-tableview-in-swift-4-ios-11-23635d108409)
 
 License
 --------

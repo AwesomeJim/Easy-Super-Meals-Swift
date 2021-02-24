@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE58EE1925E402AD00983294 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58EE1825E402AD00983294 /* DataController.swift */; };
 		CE72E8E725E589D200AD8886 /* SavedRecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72E8E625E589D200AD8886 /* SavedRecipeDetailsViewController.swift */; };
+		CEB68A5F25E68E0E003D3F04 /* screenshots in Resources */ = {isa = PBXBuildFile; fileRef = CEB68A5E25E68E0E003D3F04 /* screenshots */; };
 		CEC7798D25E24AFD00FF3308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */; };
 		CEC7798F25E24AFD00FF3308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */; };
 		CEC7799125E24AFD00FF3308 /* FavouritesRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7799025E24AFD00FF3308 /* FavouritesRecipeViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		CE58EE1825E402AD00983294 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		CE72E8E625E589D200AD8886 /* SavedRecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		CEB68A5E25E68E0E003D3F04 /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = screenshots; sourceTree = "<group>"; };
 		CEC7798925E24AFD00FF3308 /* Easy Super Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Super Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC7798C25E24AFD00FF3308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC7798E25E24AFD00FF3308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		CEC7798025E24AFC00FF3308 = {
 			isa = PBXGroup;
 			children = (
+				CEB68A5E25E68E0E003D3F04 /* screenshots */,
 				CEC779AA25E2547000FF3308 /* README.md */,
 				CEC7798B25E24AFD00FF3308 /* Easy Super Meals */,
 				CEC7798A25E24AFD00FF3308 /* Products */,
@@ -227,6 +230,7 @@
 				CEC7799925E24AFF00FF3308 /* LaunchScreen.storyboard in Resources */,
 				CEC7799625E24AFF00FF3308 /* Assets.xcassets in Resources */,
 				CEC779AB25E2547000FF3308 /* README.md in Resources */,
+				CEB68A5F25E68E0E003D3F04 /* screenshots in Resources */,
 				CEC7799425E24AFD00FF3308 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

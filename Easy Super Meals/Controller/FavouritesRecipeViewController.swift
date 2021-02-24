@@ -10,7 +10,7 @@ import CoreData
 
 //MARK:- FavouritesRecipeViewController
 
-class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
+class FavouritesRecipeViewController: UIViewController{
     
     /// A table view that displays a list of saved recipes
     @IBOutlet weak var tableView: UITableView!
@@ -23,6 +23,7 @@ class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
         super.viewDidLoad()
         //set Title
         tableView.dataSource = self
+        tableView.delegate = self
         self.navigationItem.title = kfouariteTitle
         navigationItem.rightBarButtonItem = editButtonItem
         setUpFetchedResultsController()
@@ -77,9 +78,25 @@ class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
         super.setEditing(editing, animated: animated)
         tableView.setEditing(editing, animated: animated)
     }
-
+    
+    
+    //-----------------------------------------------------------------
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == kNavTosavedRecipeSegue {
+            let detailVC = segue.destination as! SavedRecipeDetailsViewController
+            detailVC.recipe = sender as? Recipe
+        }
+    }
+    
+}
 // -------------------------------------------------------------------------
 // MARK: - Table view data source
+extension FavouritesRecipeViewController:UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 1
@@ -112,8 +129,8 @@ class FavouritesRecipeViewController: UIViewController, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // let shortRecipe = self.recipeList[(indexPath as NSIndexPath).row]
-        performSegue(withIdentifier: "savedRecipeSegue", sender: nil)
+        let recipe = fetchedResultsController.object(at: indexPath)
+        performSegue(withIdentifier:kNavTosavedRecipeSegue, sender: recipe)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

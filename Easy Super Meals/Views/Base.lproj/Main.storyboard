@@ -522,6 +522,7 @@
                     <navigationItem key="navigationItem" id="fer-hy-can"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="IngredientsView" destination="8Rq-N3-g79" id="P04-y0-T48"/>
                         <outlet property="favButton" destination="kO3-Ow-E70" id="6ej-nq-ZAQ"/>
                         <outlet property="recipeBannerImageView" destination="bzZ-Yu-dQ7" id="ejr-rg-BnO"/>
                         <outlet property="recipeInstrusctionsTextView" destination="59B-Ei-atn" id="4Ln-o8-PQH"/>

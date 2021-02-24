@@ -18,3 +18,5 @@ let kIngredientsCell = "IngredientsCell"
 
 
 let kSavedRecipeCell = "savedRecipeCell"
+
+let kNavTosavedRecipeSegue = "savedRecipeSegue"

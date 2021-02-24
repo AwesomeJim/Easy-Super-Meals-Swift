@@ -18,7 +18,7 @@ Main Features:
 
 Screenshots
 ------------
-![ScreenShot-1](screenshots/Simulator Screen Shot_1.png "ScreenShot-1" ) ![ScreenShot-2](screenshots/Simulator Screen Shot_2.png "ScreenShot-2" )   ![ScreenShot-3](screenshots/Simulator Screen Shot_3.png "ScreenShot-3" )![Gif Image](screenshots/animation.gif.gif "Gif" )
+![ScreenShot-1](screenshots/SimulatorScreenShot_1.png "ScreenShot-1" )![ScreenShot-2](screenshots/SimulatorScreenShot_2.png "ScreenShot-2" )   ![ScreenShot-3](screenshots/SimulatorScreenShot_3.png "ScreenShot-3" )![Gif Image](screenshots/animation.gif.gif "Gif" )
 
 ## Built with
 

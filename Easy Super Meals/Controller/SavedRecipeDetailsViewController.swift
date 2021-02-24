@@ -24,13 +24,15 @@ class SavedRecipeDetailsViewController: UIViewController {
     //MARK:-Properties
     var recipe:Recipe!
     var fetchedResultsController:NSFetchedResultsController<Ingredients>!
-    
+    let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    let selectedtitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let selectedRecipe = recipe else {
           return
         }
+        favButton.setTitle("Saved", for: UIControl.State.selected)
         if #available(iOS 13.0, *) {
             favButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.selected)
         } else {
@@ -39,6 +41,9 @@ class SavedRecipeDetailsViewController: UIViewController {
         }
         tableView.dataSource = self
         tableView.delegate = self
+       
+        selectedSegment.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        selectedSegment.setTitleTextAttributes(selectedtitleTextAttributes, for: .selected)
         populateRecipe(recipe: selectedRecipe)
         setUpFetchedResultsController()
     }

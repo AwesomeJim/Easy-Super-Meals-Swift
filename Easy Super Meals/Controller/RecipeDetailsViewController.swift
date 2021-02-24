@@ -27,12 +27,16 @@ class RecipeDetailsViewController: UIViewController {
     var imageData: Data?
     var restRecipe:RestRecipe?
     
-    
+    let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    let selectedtitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        selectedSegment.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        selectedSegment.setTitleTextAttributes(selectedtitleTextAttributes, for: .selected)
+        favouriteButton.setTitle("Saved", for: UIControl.State.selected)
         if #available(iOS 13.0, *) {
             favouriteButton.setImage(UIImage(systemName: "heart.fill"), for: UIControl.State.selected)
         } else {

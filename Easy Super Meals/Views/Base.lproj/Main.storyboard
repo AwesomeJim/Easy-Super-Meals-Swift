@@ -406,7 +406,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-yl-Smi">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO3-Ow-E70">
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO3-Ow-E70">
                                                 <rect key="frame" x="0.0" y="24" width="136" height="22"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

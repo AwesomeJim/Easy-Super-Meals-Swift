@@ -45,7 +45,8 @@ class RecipeDetailsViewController: UIViewController {
         getRecipeDetails(shortRecipe: recipe)
     }
     
-    
+    // -------------------------------------------------------------------------
+    //MARK:-Helper Methods
     func getRecipeDetails(shortRecipe:ShortRecipe) {
         ApiClient.requestFullRecipe(recipeId: shortRecipe.id) { (response, error) in
             if error == nil {
@@ -106,7 +107,7 @@ class RecipeDetailsViewController: UIViewController {
                 ingre.name = ingredient.name
                 ingre.quantity = ingredient.quantity
                 ingre.recipe = recipe
-                try? DataController.shared.backgroundContext.save()
+                try? DataController.shared.viewContext.save()
             }
             favouriteButton.isSelected = true
         
@@ -148,7 +149,6 @@ class RecipeDetailsViewController: UIViewController {
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         if !sender.isSelected {
-            print("Save Button Clicked")
             saveRecipe()
         }else {
             showToast(message:"Recipe is already saved")

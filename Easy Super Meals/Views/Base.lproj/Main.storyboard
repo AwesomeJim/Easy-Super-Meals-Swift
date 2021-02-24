@@ -132,7 +132,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRk-0x-09u">
                                                 <rect key="frame" x="0.0" y="24" width="138" height="22"/>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button" image="heart" catalog="system"/>
+                                                <state key="normal" title="Save" image="heart" catalog="system">
+                                                    <color key="titleColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleShadowColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="favoriteButtonPressed:" destination="yN4-Na-fw5" eventType="touchUpInside" id="hxt-xi-JlO"/>
                                                 </connections>
@@ -140,7 +143,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BvY-5G-UE1">
                                                 <rect key="frame" x="138" y="24" width="138" height="22"/>
                                                 <color key="tintColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button" image="y.circle.fill" catalog="system"/>
+                                                <state key="normal" title="Youtube" image="y.circle.fill" catalog="system">
+                                                    <color key="titleColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleShadowColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="youtubeButtonPressed:" destination="yN4-Na-fw5" eventType="touchUpInside" id="FI4-ut-r1q"/>
                                                 </connections>
@@ -148,7 +154,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe1-gt-tMm">
                                                 <rect key="frame" x="276" y="24" width="138" height="22"/>
                                                 <color key="tintColor" red="0.065494121050000007" green="0.40332118700000003" blue="0.893605655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button" image="w.circle.fill" catalog="system"/>
+                                                <state key="normal" title="web" image="w.circle.fill" catalog="system">
+                                                    <color key="titleColor" red="0.065494121050000007" green="0.40332118700000003" blue="0.893605655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleShadowColor" red="0.065494121050000007" green="0.40332118700000003" blue="0.893605655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="webButtonPressed:" destination="yN4-Na-fw5" eventType="touchUpInside" id="Sv2-yi-Q6F"/>
                                                 </connections>
@@ -394,29 +403,38 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UZC-Tj-vjd">
                                 <rect key="frame" x="0.0" y="310" width="414" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-yl-Smi">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="f2G-yl-Smi">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kO3-Ow-E70">
-                                                <rect key="frame" x="0.0" y="24" width="138" height="22"/>
+                                                <rect key="frame" x="0.0" y="24" width="136" height="22"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button" image="heart" catalog="system"/>
+                                                <state key="normal" title="Save" image="heart" catalog="system">
+                                                    <color key="titleColor" red="0.93333333330000001" green="0.43529411759999997" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="favButtonPressed:" destination="QxR-EA-BQ8" eventType="touchUpInside" id="XNo-gQ-kOR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2w-uK-p6W">
-                                                <rect key="frame" x="138" y="24" width="138" height="22"/>
+                                                <rect key="frame" x="139" y="24" width="136" height="22"/>
                                                 <color key="tintColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button" image="y.circle.fill" catalog="system"/>
+                                                <state key="normal" title="youtube" image="y.circle.fill" catalog="system">
+                                                    <color key="titleColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleShadowColor" red="0.60609471800000003" green="0.110549219" blue="0.1215417162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="youtubeButton:" destination="QxR-EA-BQ8" eventType="touchUpInside" id="nlf-GO-Eak"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTA-UM-R67">
-                                                <rect key="frame" x="276" y="24" width="138" height="22"/>
+                                                <rect key="frame" x="278" y="24" width="136" height="22"/>
                                                 <color key="tintColor" red="0.065494121050000007" green="0.40332118700000003" blue="0.893605655" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button" image="w.circle.fill" catalog="system"/>
+                                                <state key="normal" title="web" image="w.circle.fill" catalog="system">
+                                                    <color key="titleColor" red="0.12953534720000001" green="0.22588026520000001" blue="0.53336179260000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="titleShadowColor" red="0.12953534720000001" green="0.22588026520000001" blue="0.53336179260000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="webButtonPressed:" destination="QxR-EA-BQ8" eventType="touchUpInside" id="WWZ-Yu-Pm9"/>
                                                 </connections>
